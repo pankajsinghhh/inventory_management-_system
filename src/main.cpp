@@ -142,7 +142,7 @@ int main(){
 
         cout<<"\n1 View Products\n";
         cout<<"2 Add Product\n";
-        cout<<"4 left Product\n";
+        cout<<"3 purchase Product\n";
 	cout<<"4 Delete Product\n";
         cout<<"5 Exit\n";
 
