@@ -116,6 +116,21 @@ void purchaseProduct(){
 
     cout<<"Product not available\n";
 }
+ void deleteProduct(){
+     int id;
+     cout<<"Enter Product ID to delete: ";
+     cin>>id;
+    
+     for(auto it = products.begin(); it != products.end(); ++it){
+         if(it->id == id){
+             cout<<"Deleting product: "<<it->name<<endl;
+             products.erase(it);
+             cout<<"Product deleted successfully\n";
+             return;
+         }
+     }
+     cout<<"Product not found\n";
+}
 
 int main(){
 
@@ -128,14 +143,16 @@ int main(){
         cout<<"\n1 View Products\n";
         cout<<"2 Add Product\n";
         cout<<"3 Purchase Product\n";
-        cout<<"4 Exit\n";
+	cout<<"4 Delete Product\n";
+        cout<<"5 Exit\n";
 
         cin>>choice;
 
         if(choice==1) showProducts();
         else if(choice==2) addProduct();
         else if(choice==3) purchaseProduct();
-        else if(choice==4){
+	else if(choice==4) deleteProduct();
+        else if(choice==5){
             saveProducts();
             break;
         }
